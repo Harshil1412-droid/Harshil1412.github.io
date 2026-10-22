@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshil | Personal Website</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: #f4f6ff;
+      line-height: 1.6;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #151d35;
+      border-bottom: 1px solid #303b59;
+    }
+    header h1 { margin: 0; color: #70e1ff; }
+    nav { margin-top: 12px; }
+    nav a {
+      color: #fff;
+      margin: 0 9px;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    main { max-width: 850px; margin: auto; padding: 22px; }
+    .hero {
+      text-align: center;
+      padding: 48px 12px;
+    }
+    .hero h2 { font-size: 34px; margin-bottom: 10px; }
+    .highlight { color: #70e1ff; }
+    .card {
+      background: #151d35;
+      border: 1px solid #303b59;
+      padding: 22px;
+      border-radius: 18px;
+      margin: 20px 0;
+    }
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border-radius: 10px;
+      background: #70e1ff;
+      color: #07111f;
+      text-decoration: none;
+      font-weight: bold;
+      border: 0;
+      cursor: pointer;
+    }
+    input, textarea, select {
+      width: 100%;
+      margin: 7px 0 14px;
+      padding: 12px;
+      border-radius: 9px;
+      border: 1px solid #52617e;
+      background: #0b1020;
+      color: white;
+      font-size: 16px;
+    }
+    .note { color: #c2cbe0; font-size: 14px; }
+    footer { text-align: center; padding: 24px; color: #aebbd4; }
+    a { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Harshil Shetty</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#shetty-ai">Shetty AI</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <p class="highlight">WELCOME TO MY WEBSITE</p>
+      <h2>Hi, I'm Harshil 👋</h2>
+      <p>A student exploring technology, AI and new ideas.</p>
+      <a class="button" href="#shetty-ai">Explore Shetty AI</a>
+    </section>
+
+    <section class="card" id="about">
+      <h2>About Me</h2>
+      <p>Welcome to my personal website!</p>
+      <p>I am interested in learning, technology and building useful AI tools.</p>
+    </section>
+
+    <section class="card" id="shetty-ai">
+      <h2>🤖 Shetty AI</h2>
+      <p>Your idea for an AI-powered study assistant.</p>
+      <ul>
+        <li>Class 12 Gujarat Board study notes</li>
+        <li>JEE and GUJCET revision</li>
+        <li>Chapter-wise mock tests</li>
+        <li>Step-by-step doubt explanations</li>
+        <li>Lecture-based notes and revision</li>
+      </ul>
+      <p class="note">
+        This is an early website preview. AI answers, video analysis,
+        login and PDF generation need a separate working AI service.
+      </p>
+      <label for="question">Try the study assistant</label>
+      <textarea id="question" rows="3"
+        placeholder="Write a chemistry or physics question..."></textarea>
+      <button class="button" onclick="askAI()">Ask ChatGPT</button>
+      <p id="result" class="note"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with curiosity by Harshil ✨</p>
+    <p>Personal website • Shetty AI project</p>
+  </footer>
+
+  <script>
+    function askAI() {
+      const question = document.getElementById("question").value.trim();
+      if (!question) {
+        document.getElementById("result").textContent =
+          "Please type your question first.";
+        return;
+      }
+      window.open(
+        "https://chatgpt.com/?q=" + encodeURIComponent(question),
+        "_blank"
+      );
+    }
+  </script>
+</body>
+</html>
